@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "EUR",
+    "amount": 100
+  },
+  "info": {
+    "quote": 0.933402,
+    "timestamp": 1699550089
+  },
+  "result": 93.3402
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swiperefreshlayout"
+    tools:context=".features.rates.RatesFragment">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue02"
+    >
+<androidx.cardview.widget.CardView
+    android:id="@+id/basecardview"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:cardElevation="5dp"
+    android:minHeight="80dp"
+
+    app:cardBackgroundColor="?attr/colorPrimary"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_1"
+    app:layout_constraintStart_toStartOf="parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/spinner_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="choose base currency"
+            style="@style/spinner_style"
+            android:layout_weight="3"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currencies_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="@integer/num_col_recycler"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        tools:listitem="@layout/recyclerview_row_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

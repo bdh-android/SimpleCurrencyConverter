@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swipetorefresh"
+    tools:context=".features.convert.ConvertFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+       android:layout_height="match_parent"
+        android:background="@color/blue02">
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_marginTop="1dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/update_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="api.forexrateapi.com"
+            android:textColor="@color/blue"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_0"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:text="@string/app_name"
+                android:textColor="?attr/colorAccent"
+                android:gravity="center"
+                android:textSize="24sp"
+                />
+        </androidx.cardview.widget.CardView>
+   <androidx.cardview.widget.CardView
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1"
+       app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_2"
+       app:layout_constraintEnd_toStartOf="@id/guideline_center"
+       app:cardBackgroundColor="?attr/colorPrimary"
+       app:cardCornerRadius="20dp"
+       android:layout_marginEnd="4dp"
+       android:layout_marginStart="4dp"
+       >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="horizontal">
+           <Spinner
+               android:id="@+id/spinner_from"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:contentDescription="choose currency to convert from"
+               android:spinnerMode="dialog"
+                android:layout_gravity="center_vertical" />
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/textInputLayout_from"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+               android:layout_weight="1"
+               android:paddingEnd="5dp"
+               app:boxStrokeWidth="0dp"
+               android:paddingStart="5dp"
+               android:paddingLeft="5dp">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/edittext_from"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@android:color/transparent"
+                   android:gravity="center_horizontal"
+                   android:hint="-"
+                   android:textSize="30sp"
+                   android:textColor="@color/white"
+                   android:inputType="numberDecimal"
+                   android:textAlignment="center" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+
+       </LinearLayout>
+   </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_1"
+            app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_2"
+            app:layout_constraintStart_toEndOf="@id/guideline_center"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            app:cardCornerRadius="20dp"
+android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Spinner
+                android:id="@+id/spinner_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="choose currency to convert to"
+                android:spinnerMode="dialog"
+                    android:layout_gravity="center_vertical"
+                />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout_to"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_gravity="center_vertical"  app:boxStrokeWidth="0dp"
+                    android:layout_weight="1"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_to"
+                        android:layout_width="match_parent"
+                        android:inputType="numberDecimal"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:background="@android:color/transparent"
+                        android:hint="-" android:textColor="@color/white"  android:textSize="30sp"
+                        android:gravity="center_horizontal" />
+
+                </com.google.android.material.textfield.TextInputLayout></LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout >
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
